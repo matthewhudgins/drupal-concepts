@@ -1,0 +1,13 @@
+matts_module.ticket:
+  path: '/ticket/{nid}'
+  defaults:
+    _controller: '\Drupal\matts_module\Controller\MattsModuleController::ticket'
+  requirements:
+    _permission: 'access content'
+matts_module.ajax_form:
+  path: '/vip/check'
+  defaults:
+    _form: '\Drupal\matts_module\Form\VipAjax'
+    _title: 'Vip Check'
+  requirements:
+    _permission: 'access administration pages'

@@ -1,0 +1,19 @@
+<div class="ticket-container">
+	<p class="ticket-info mt-5 pt-3">Please present this Digital Access Card for entry for you and your team.</p>
+	<div class="ticket">
+		<div class="ticket-top">
+			<div class="ticket-info-field-container">
+				<div class="ticket-info-field">
+					<div class="ticket-label">Name</div>
+					<div class="ticket-value">{{ full_name }}</div>
+				</div>
+			</div>
+		</div>
+		<div class="ticket-bottom">
+			<div class="barcode">
+            {% if show_apple_wallet %}<div class="add-to-wallet-link"><a href="/modules/custom/matts_module/vips/{{code}}.pkpass"><img src="/modules/custom/matts_module/images/add-to-wallet.svg"/></a></div>{% endif %}
+				<svg class="barcode" jsbarcode-height="100" jsbarcode-format="CODE128" jsbarcode-value="{{ code }}" jsbarcode-textmargin="0" jsbarcode-width="3" jsbarcode-fontoptions="bold"></svg>
+			</div>
+		</div>
+	</div>
+</div>

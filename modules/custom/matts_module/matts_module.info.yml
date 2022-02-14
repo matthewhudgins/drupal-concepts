@@ -1,0 +1,10 @@
+name: Matt's Module
+type: module
+description: 'Module to demonstrate various drupal concepts'
+package: Matt
+core_version_requirement: ^8.8 || ^9
+libraries:
+  - matts_module/main
+dependencies:
+  - 'drupal:node'
+  - webform:webform (>=6.x)

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.vip
+id: node.vip.field_code
+field_name: field_code
+entity_type: node
+bundle: vip
+required: false
+label: 'Code'
+description: 'Code for entry'
+default_value: 'AAAA'
+field_type: string_long
+settings: {  }
+translatable: false
