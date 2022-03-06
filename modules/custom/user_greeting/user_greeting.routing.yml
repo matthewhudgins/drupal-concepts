@@ -1,0 +1,9 @@
+user_greeting.settings:
+  path: '/admin/config/user-greeting/settings'
+  defaults:
+    _form: '\Drupal\user_greeting\Form\UserGreetingConfig'
+    _title: 'User Greeting Config'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
