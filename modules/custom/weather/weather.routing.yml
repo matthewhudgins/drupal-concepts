@@ -1,0 +1,22 @@
+weather.entry:
+  path: '/weather'
+  defaults:
+    _controller: '\Drupal\weather\Controller\WeatherController::viewAndUpdateAllLocations'
+  requirements:
+    _permission: 'access content'
+weather.location_entry:
+  path: '/weather-entry'
+  defaults:
+    _form: '\Drupal\weather\Form\LocationEntry'
+    _title: 'Location Entry'
+  requirements:
+    _permission: 'access content'
+weather.settings:
+  path: '/admin/config/weather/settings'
+  defaults:
+    _form: '\Drupal\weather\Form\WeatherConfig'
+    _title: 'Weather Config'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

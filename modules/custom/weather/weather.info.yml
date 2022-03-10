@@ -1,0 +1,9 @@
+name: Weather
+type: module
+description: 'Module that handles weather features'
+package: Matt
+core_version_requirement: ^8.8 || ^9
+libraries:
+  - weather/main
+dependencies:
+  - 'drupal:node'

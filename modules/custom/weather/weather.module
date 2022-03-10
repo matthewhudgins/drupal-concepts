@@ -1,0 +1,12 @@
+<?php
+
+function weather_theme(){
+  return [
+    'viewMap' => [
+      'template' => 'map',
+      'variables' => [
+          'title' => NULL,
+      ]
+    ]
+  ];
+}
