@@ -36,6 +36,13 @@ I decided to play with the idea of removing the concept of a submit button. All 
 /weather Place where you can view every location and its weather. The weather is updated whenever this page is visited
 /admin/config/weather/settings Area for entering API keys
 
+#### Requirements
+Until I add the proper config files, this module requires a content type called location that has the following fields
+field_latitude - Number (float)
+field_longitude - Number (float)
+field_user - User entity reference
+field_zip_code - Text (plain)
+field_temperature - Text (plain)
 #### Wishlist
 Things to add to the weather module if time allows
 * Generate the location content type and its associated field on install of the module
