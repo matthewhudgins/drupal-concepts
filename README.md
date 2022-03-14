@@ -46,10 +46,8 @@ field_temperature - Text (plain)
 #### Wishlist
 Things to add to the weather module if time allows
 * Generate the location content type and its associated field on install of the module
-* Display a google map with pins of all the locations
 * Display more weather data besides temperature like wind and cloudiness
 * Add more error checking
-* Use twig template for weather data page with some basic styling
 * Improve feel of weather entry database
 ### User Greeting Module
 **Located in /modules/custom/user_greeting**
