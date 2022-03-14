@@ -3,5 +3,18 @@ main:
   js:
     https://maps.googleapis.com/maps/api/js?key=AIzaSyBCbTPEfb5gRtaNNXZGPvn_GxkrDoNkCG8: {type: external}
     js/main.js: {}
+  css:
+    theme:
+      css/main.css: {}
+  dependencies:
+    - core/jquery
+map:
+  version: 1.0
+  js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyBCbTPEfb5gRtaNNXZGPvn_GxkrDoNkCG8: {type: external}
+    js/map.js: {}
+  css:
+    theme:
+      css/main.css: {}
   dependencies:
     - core/jquery

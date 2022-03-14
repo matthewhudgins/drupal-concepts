@@ -1,0 +1,7 @@
+<h1>Weather Map</h1>
+{% for location in locations %}
+<div class="location" data-temp="{{ location.temp }}" data-name="{{ location.name }}" data-lat="{{ location.lat }}" data-lng="{{ location.lng }}"><p>Name: {{ location.name }}</p>
+<p>Temperature: {{ location.temp }} °F </p>
+</div>
+{% endfor %}
+<div id="map"></div>

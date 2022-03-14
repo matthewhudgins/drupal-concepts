@@ -2,10 +2,11 @@
 
 function weather_theme(){
   return [
-    'viewMap' => [
+    'map' => [
       'template' => 'map',
       'variables' => [
           'title' => NULL,
+          'locations' => [],
       ]
     ]
   ];

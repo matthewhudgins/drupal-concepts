@@ -15,12 +15,12 @@ class WeatherController extends ControllerBase
     if ($nids) {
       $locationNodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
     }
-    $weatherMarkup = '<h2>All Weather Locations</h2>';
 
     //Get API Key for Weather
     $config = \Drupal::config('weather.settings');
     $openweather_api_key = $config->get('openweather_api_key');
 
+    $weatherLocations = [];
     // Loop through every location and update their weather data
     foreach ($locationNodes as $location) {
       $lat = $location->field_latitude->value;
@@ -35,9 +35,18 @@ class WeatherController extends ControllerBase
           $location->save();
         }
       }
-      //Add the weather data to the markup that will displayed on the page.
-      $weatherMarkup .= "<div class='location'><p>Location Name: {$location->title->value}<br/>Temperature: {$location->field_temperature->value}</p></div>";
+      //Add the weather data to an array that will be used by the twig template
+      array_push($weatherLocations,['name' => $location->title->value, 'temp' => $location->field_temperature->value, 'lat' => $location->field_latitude->value, 'lng' => $location->field_longitude->value]);
     }
-    return ['#markup' => $weatherMarkup, '#cache' => ['max-age' => 0]];
+
+
+    $build['page'] = [
+      '#theme' => 'map',
+      '#title' => 'Weather Map',
+      '#locations' => $weatherLocations
+    ];
+    $build['#cache'] = ['max-age' => 0];
+    $build['page']['#attached']['library'][] = 'weather/map';
+    return $build;
   }
 }

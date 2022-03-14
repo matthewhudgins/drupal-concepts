@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - weather
+name: 'Location'
+type: location
+description: 'Content type used for locations'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,31 @@
+.modal {
+    position: absolute;
+    margin: 0 auto;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.hidden {
+    display: none;
+}
+
+#map {
+    height: 500px;
+}
+
+.location {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}

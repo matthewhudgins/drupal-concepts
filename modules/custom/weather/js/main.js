@@ -30,7 +30,6 @@ const getLatLngFromZip = (zip) => {
         }
     });
 };
-
 //Let's check for empty locations every now and again. It's a little more consistent than automatically checking for mutations to the dom
 setInterval(function() {
     // Before bothering to do any lookups lets check to see if the number of locations have changed
@@ -47,6 +46,7 @@ setInterval(function() {
                 $(lng).val(geocodeData.longitude);
                 $(nickname).val(geocodeData.city);
                 $(zip).val(geocodeData.postal_code);
+                $('body').prepend('<div id="loading-screen" class="overlay"><div class="modal">Loading...</div></div>');
                 //Not 100% necessary but I want to give Drupal a little time to breathe before triggering the change event
                 setTimeout(function() {
                     $(lat).change();
@@ -54,10 +54,12 @@ setInterval(function() {
                 }, 1000)
                 setTimeout(function() {
                     $(zip).change();
-                    $(nickname).change();
                 }, 2000)
-
+                setTimeout(function() {
+                    $(nickname).change();
+                    $('#loading-screen').remove();
+                }, 2500)
             }
         });
     }
-}, 5000)
+}, 3000)
